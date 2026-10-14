@@ -16,6 +16,7 @@ DATA_FILE_PATH = Path(
 JSON_INDENT = 4  ##< Indentation of the written JSON, for readability.
 KEY_EMAIL = "email"  ##< JSON key of an entry's e-mail address.
 KEY_PASSWORD = "password"  ##< JSON key of an entry's password.
+FILE_ENCODING = "utf-8"  ##< Text encoding of the data file.
 
 # Password generator
 LETTERS = string.ascii_letters  ##< Letters a password may use.
@@ -36,6 +37,17 @@ DEFAULT_EMAIL = "name@example.com"  ##< E-mail address the form starts with.
 ENTRY_WIDTH_WIDE = 35  ##< Width in characters of the e-mail and add fields.
 ENTRY_WIDTH_NARROW = 21  ##< Width in characters of the website and password fields.
 
+# Logo (a padlock drawn with canvas shapes)
+LOGO_BACKGROUND = "white"  ##< Canvas background colour.
+LOGO_BODY_COLOR = "#2b6cb0"  ##< Fill of the padlock body.
+LOGO_SHACKLE_COLOR = "#4a5568"  ##< Outline colour of the padlock shackle.
+LOGO_KEYHOLE_COLOR = "white"  ##< Fill of the keyhole.
+LOGO_SHACKLE_WIDTH = 12  ##< Line width of the shackle, in pixels.
+LOGO_BODY_BOX = (50, 100, 150, 180)  ##< Padlock body rectangle (x0, y0, x1, y1).
+LOGO_SHACKLE_BOX = (65, 30, 135, 170)  ##< Bounding box of the shackle arc.
+LOGO_KEYHOLE_BOX = (92, 125, 108, 141)  ##< Bounding box of the keyhole circle.
+LOGO_KEYHOLE_SLOT = (97, 138, 103, 160)  ##< Rectangle of the keyhole slot.
+
 # Labels and messages
 LABEL_WEBSITE = "Website:"
 LABEL_EMAIL = "Email/Username:"
@@ -54,3 +66,5 @@ MESSAGE_CONFIRM_SAVE = (
     "Password: {password}\nIs it ok to save?"
 )
 MESSAGE_DETAILS = "Email: {email}\nPassword: {password}"
+MESSAGE_INVALID_DATA_FILE = "The data file has an unexpected format."
+MESSAGE_SAVED = "Details for {website} were saved."
