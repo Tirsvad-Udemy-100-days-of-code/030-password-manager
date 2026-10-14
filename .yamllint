@@ -1,0 +1,8 @@
+---
+# yamllint configuration of this repository (yamllint 1.38.0).
+extends: default
+rules:
+  line-length:
+    max: 100
+  truthy:
+    check-keys: false
