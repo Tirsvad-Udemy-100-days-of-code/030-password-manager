@@ -31,6 +31,7 @@ an artifact instance is created or reviewed.
 | [MIL-002] | MIL | en | it | [BC-001], [MIL-001] | [MIL-003] | [RC-005] |
 | [MIL-003] | MIL | en | it | [BC-001], [MIL-002] | - | [RC-006] |
 | `src/`, `tests/` (MIL-001 code) | PY | - | - | [MIL-001] | - | [RC-007] |
+| `src/`, `tests/` (MIL-002 code) | PY | - | - | [MIL-002] | - | [RC-008] |
 
 ## Coverage Notes
 
@@ -58,3 +59,4 @@ an artifact instance is created or reviewed.
 [RC-006]: ./reviews/rc-006-mil-003.md
 [53f56ee]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/030-password-manager/commit/53f56eeb143d810b91da23f743a53a32207f81bb
 [RC-007]: ./reviews/rc-007-mil-001-code.md
+[RC-008]: ./reviews/rc-008-mil-002-code.md
