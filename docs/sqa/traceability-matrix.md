@@ -32,6 +32,8 @@ an artifact instance is created or reviewed.
 | [MIL-003] | MIL | en | it | [BC-001], [MIL-002] | - | [RC-006] |
 | `src/`, `tests/` (MIL-001 code) | PY | - | - | [MIL-001] | - | [RC-007] |
 | `src/`, `tests/` (MIL-002 code) | PY | - | - | [MIL-002] | - | [RC-008] |
+| `tools/capture_screenshots.py` | PY | - | - | [MIL-003] | - | [RC-009] |
+| `.gitea/workflows/publish-wiki.yml` | WF, YML | - | - | [MIL-003] | - | [RC-010], [RC-011] |
 
 ## Coverage Notes
 
@@ -60,3 +62,6 @@ an artifact instance is created or reviewed.
 [53f56ee]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/030-password-manager/commit/53f56eeb143d810b91da23f743a53a32207f81bb
 [RC-007]: ./reviews/rc-007-mil-001-code.md
 [RC-008]: ./reviews/rc-008-mil-002-code.md
+[RC-009]: ./reviews/rc-009-mil-003-tools-code.md
+[RC-010]: ./reviews/rc-010-publish-wiki-workflow.md
+[RC-011]: ./reviews/rc-011-publish-wiki-yaml.md
