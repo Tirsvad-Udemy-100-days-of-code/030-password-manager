@@ -9,7 +9,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-14 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [eb7b7dc] |
+| 2026-10-14 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [eb7b7dc] |
+| 2026-10-14 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Conditions closed: criteria 12 and 22 pass, verdict Go | pending |
 
 ---
 
@@ -39,7 +40,7 @@
 | 9 | No secret is written in the file; a secret is read as `secrets.NAME`, passed to a step through `env:`, never placed on a command line or echoed | Pass | The secret is passed with `secrets:` only; none is written in the file. |
 | 10 | Untrusted text (`inputs.*`, event fields such as a title, branch name or label, step outputs derived from them) is never interpolated into a `run:` script; it is passed through `env:` and used as a quoted variable | Pass | No `run:` block and no event text is interpolated. |
 | 11 | A trigger that gives a run secrets or a write token on code from a fork or an untrusted branch (`pull_request_target`, `workflow_run`) does not check out or execute that code | Pass | No `pull_request_target` or `workflow_run` trigger. |
-| 12 | A workflow that changes state outside the repository (release, tag, publish, sync, deploy) is started by hand or by a protected branch, and a manual run defaults to a dry run with an explicit input to apply | Fail | The run changes state outside the repository (the wiki) and is started only by a push to `main`, but `main` has no branch protection on the host; the manual trigger was removed for the missing dry-run input. |
+| 12 | A workflow that changes state outside the repository (release, tag, publish, sync, deploy) is started by hand or by a protected branch, and a manual run defaults to a dry run with an explicit input to apply | Pass | Started only by a push to `main`; `main` is protected on the host since 2026-10-14 (direct and force pushes blocked), so only merged pull requests reach it. The manual trigger was removed. |
 | 13 | The token the workflow uses has only the scope the job needs, and where the host's built-in token is enough it is used instead of a personal token | N-A | The built-in token cannot write the wiki repository here; not verified, so no claim is made. |
 | 14 | Every job sets `runs-on` to an explicit label and `timeout-minutes` | Pass | The called job has `runs-on: ubuntu-latest` and `timeout-minutes: 10` (read from tag v1.2.2). |
 | 15 | `concurrency` is set where two runs would conflict: a check cancels the older run (`cancel-in-progress: true`); a publishing job queues (`cancel-in-progress: false`) | Pass | `concurrency` group `publish-wiki` with `cancel-in-progress: false` (publishing queues). |
@@ -49,21 +50,21 @@
 | 19 | A failing step names the tool, the file and the reason in its log (annotation or `::error::` line) | N-A | No step of this file. |
 | 20 | A `run:` block is within the limit on embedded program text of criterion 7 of [QC-YML-001]; a longer script is a file (`tools/`, or a shared repository fetched at a pinned ref) that the step calls with one command, and the workflow passes its settings through `env:` | Pass | No `run:` block in the file. |
 | 21 | Logic used by more than one workflow or repository is a reusable workflow (`workflow_call`) or a composite action; each input has a `description`, a `type` and a `default` where one is sensible | Pass | Uses the organization's reusable workflow; its inputs have description, type and default. |
-| 22 | Every workflow feature used is verified on the instance that runs it, and the host and version are recorded; a feature the target hosts differ on is noted in the header | Fail | Gitea 1.27.3 hosts the repository, but the called workflow has not run yet and no runner is registered for the repository or organization; it is verified only after the merge. |
+| 22 | Every workflow feature used is verified on the instance that runs it, and the host and version are recorded; a feature the target hosts differ on is noted in the header | Pass | Verified on Gitea 1.27.3: run 1582 on `main` (merge of PR 25) concluded `success` and the host wiki holds the 12 pages plus sidebar and footer. |
 | 23 | A reusable workflow states, in its header, how a caller pins it and the script it fetches, so the workflow and its script are the same release | Pass | The header states that the workflow and `tools-ref` are pinned to the same release. |
 | 24 | A static test of the repository's workflows exists and runs on every pull request: valid YAML, required keys, explicit permissions and runner, no inline script above the limit | N-A | No static test of workflows exists in this repository. |
 
 ## Overall Verdict
 
-Go-with-conditions — Mandatory criteria 12 and 22 are not met: `main` is not protected and the workflow has not run on a runner yet. Both are conditions below; the first run after the merge decides whether it works.
+Go — the conditions are closed: criterion 12 (`main` is protected) and criterion 22 (first run succeeded on Gitea 1.27.3). Every Mandatory criterion now passes.
 
 ## Action Items
 
 | Action | Owner | Due |
 | --- | --- | --- |
-| Protect `main` on the host so only reviewed pull requests change the wiki | S01 | 2026-10-26 |
-| Register a runner and confirm the first run on `main` publishes the wiki | S01 | Closed 2026-10-14: run 1582 on main (merge of PR 25) concluded `success`; the host wiki lists the 12 pages and the sidebar and footer |
-| Pin the nested `actions/checkout` to a commit SHA in the shared workflow (upstream) | S01 | 2026-10-26 |
+| Protect `main` on the host so only reviewed pull requests change the wiki | S01 | Closed 2026-10-14: branch protection `main` set (no direct or force push) |
+| Register a runner and confirm the first run on `main` publishes the wiki | S01 | Closed 2026-10-14: run 1582 concluded `success`; the host wiki lists the pages |
+| Suggestion, not a condition: pin the nested `actions/checkout` to a commit SHA in the shared workflow (upstream) | S01 | - |
 
 ---
 
