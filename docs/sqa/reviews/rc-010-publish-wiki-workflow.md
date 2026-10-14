@@ -62,7 +62,7 @@ Go-with-conditions — Mandatory criteria 12 and 22 are not met: `main` is not p
 | Action | Owner | Due |
 | --- | --- | --- |
 | Protect `main` on the host so only reviewed pull requests change the wiki | S01 | 2026-10-26 |
-| Register a runner and confirm the first run on `main` publishes the wiki | S01 | 2026-10-26 |
+| Register a runner and confirm the first run on `main` publishes the wiki | S01 | Closed 2026-10-14: run 1582 on main (merge of PR 25) concluded `success`; the host wiki lists the 12 pages and the sidebar and footer |
 | Pin the nested `actions/checkout` to a commit SHA in the shared workflow (upstream) | S01 | 2026-10-26 |
 
 ---
