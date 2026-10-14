@@ -1,0 +1,43 @@
+# Publish the project's wiki pages to the git host's wiki.
+#
+# Purpose:  copies the Markdown pages of docs/wiki/ (English, Danish `-da` and
+#           Bahasa Malaysia `-ms`) to the wiki of this repository.
+# Triggers: a push to main that changes docs/wiki/ (no manual trigger: the run
+#           changes the wiki, and the called workflow has no dry-run input).
+# Inputs:   none; wiki_dir and prune are fixed below.
+# Secrets:  TOKEN_FOR_GITEA_WIKI (organization secret, scope write:repository).
+# Changes outside the repository: creates, updates and, because prune is
+#           "true", deletes pages of this repository's wiki so the wiki equals
+#           docs/wiki/.
+# Decision: milestone MIL-003, task "Add the publish-wiki workflow".
+# Host:     Gitea Actions only (the called workflow uses `gitea.*` contexts).
+#           It needs a runner registered for the repository or organization.
+# Pinning:  the called workflow and its script are pinned to the same release
+#           (workflow ref and tools-ref are both v1.2.2).
+
+---
+name: Publish wiki
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/wiki/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-wiki
+  cancel-in-progress: false
+
+jobs:
+  wiki:
+    name: Publish wiki pages
+    uses: TirSystem/github-action/.gitea/workflows/publish-wiki-pages.yml@v1.2.2
+    with:
+      wiki_dir: docs/wiki
+      prune: "true"
+      tools-ref: v1.2.2
+    secrets:
+      TOKEN_FOR_GITEA_WIKI: ${{ secrets.TOKEN_FOR_GITEA_WIKI }}
