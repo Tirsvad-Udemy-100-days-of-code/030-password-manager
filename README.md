@@ -31,11 +31,22 @@ The program follows the three lectures of the assignment:
 The assignment's function names are kept: `generate_password`, `save` and
 `find_password`.
 
+![The Password Manager window after Generate Password](docs/images/main-window.png)
+
+| Search finds a saved website | Search for an unknown website |
+| --- | --- |
+| ![Search finds a saved website](docs/images/search-found.png) | ![Search for an unknown website](docs/images/search-not-found.png) |
+
+The screenshots are captured from the real window by
+`tools/capture_screenshots.py` (Windows). The wiki in English, Danish and Bahasa
+Malaysia is in `docs/wiki/`.
+
 | Path | What it holds |
 | --- | --- |
 | `src/password_manager/` | The program: domain rules, use cases, JSON storage and the Tkinter window |
 | `src/password_manager/constants.py` | Every constant (file name, labels, messages, password length bounds) |
-| `tests/` | The pytest tests |
+| `tests/` | The pytest tests (`unit`, `integration`, `e2e`) |
+| `tools/` | `capture_screenshots.py`, the screenshot capture script |
 | `docs/` | Project documents, the Doxygen output folder and the wiki in `docs/wiki/` |
 | `Doxyfile` | Doxygen configuration for the source comments |
 | `pyproject.toml` | Project configuration (Python version, entry point, pytest) |
