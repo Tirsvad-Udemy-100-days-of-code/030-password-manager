@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-14 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-14 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [82701f7] |
 
 ---
 
@@ -61,3 +61,4 @@ Go — every Mandatory criterion passes (criteria 10 and 12 are Optional or not 
 
 [MIL-001]: ../../milestones/mil-001-project-foundation.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[82701f7]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/030-password-manager/commit/82701f7c9f2adef44301c468d7836f7a38e9c074
