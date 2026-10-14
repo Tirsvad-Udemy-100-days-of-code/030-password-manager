@@ -10,7 +10,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-14 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [eb7b7dc] |
-| 2026-10-14 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Conditions closed: criteria 12 and 22 pass, verdict Go | pending |
+| 2026-10-14 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Conditions closed: criteria 12 and 22 pass, verdict Go | [fa34e18] |
 
 ---
 
@@ -73,3 +73,4 @@ Go — the conditions are closed: criterion 12 (`main` is protected) and criteri
 [QC-YML-001]: ../../../framework/qc/code/qc-yaml.md
 [RC-011]: ./rc-011-publish-wiki-yaml.md
 [eb7b7dc]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/030-password-manager/commit/eb7b7dcb17cb96535db0812c26252e9db0174d73
+[fa34e18]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/030-password-manager/commit/fa34e1835f4fb00a1cf74978d773cd75e23ba188
