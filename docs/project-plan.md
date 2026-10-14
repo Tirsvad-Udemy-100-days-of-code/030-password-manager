@@ -40,9 +40,9 @@ sets no deadline, so the plan keeps the phases short and sequential.
 
 | Gateway | Document | Window | Decision date | Owner | Stories | Main deliverable | Milestone |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Project Foundation | [MIL-001] | 2026-10-14 to 2026-10-15 | 2026-10-15 | S01 | none | pyproject.toml, .gitignore, constants.py, Doxyfile, README, repository description and topics | |
-| Password Manager Features | [MIL-002] | 2026-10-15 to 2026-10-17 | 2026-10-17 | S01 | none | JSON storage, exception handling, search, generator, window and tests | |
-| Documentation and Publishing | [MIL-003] | 2026-10-17 to 2026-10-19 | 2026-10-19 | S01 | none | Screenshots, README with screenshots, wiki in en, da and ms | |
+| Project Foundation | [MIL-001] | 2026-10-14 to 2026-10-15 | 2026-10-15 | S01 | none | pyproject.toml, .gitignore, constants.py, Doxyfile, README, repository description and topics | [Milestone 162](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/030-password-manager/milestone/162) |
+| Password Manager Features | [MIL-002] | 2026-10-15 to 2026-10-17 | 2026-10-17 | S01 | none | JSON storage, exception handling, search, generator, window and tests | [Milestone 163](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/030-password-manager/milestone/163) |
+| Documentation and Publishing | [MIL-003] | 2026-10-17 to 2026-10-19 | 2026-10-19 | S01 | none | Screenshots, README with screenshots, wiki in en, da and ms | [Milestone 164](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/030-password-manager/milestone/164) |
 
 ```plantuml
 @startgantt
