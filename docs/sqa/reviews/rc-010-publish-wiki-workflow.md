@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-14 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-14 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [eb7b7dc] |
 
 ---
 
@@ -71,3 +71,4 @@ Go-with-conditions — Mandatory criteria 12 and 22 are not met: `main` is not p
 [QC-WF-001]: ../../../framework/qc/code/qc-workflow.md
 [QC-YML-001]: ../../../framework/qc/code/qc-yaml.md
 [RC-011]: ./rc-011-publish-wiki-yaml.md
+[eb7b7dc]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/030-password-manager/commit/eb7b7dcb17cb96535db0812c26252e9db0174d73
