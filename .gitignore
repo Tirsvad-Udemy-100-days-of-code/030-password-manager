@@ -1,0 +1,33 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Doxygen output
+docs/doxygen/
+
+# The program's own data file (it holds passwords)
+data.json
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
