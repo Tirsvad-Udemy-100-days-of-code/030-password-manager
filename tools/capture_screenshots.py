@@ -254,7 +254,10 @@ def main() -> None:
     args.out.mkdir(parents=True, exist_ok=True)
     for state in STATES:
         target = args.out / f"{state}.png"
+        # Arguments: this script, a fixed state name and an output path; no shell.
+        # nosemgrep
         subprocess.run(
+            # nosemgrep
             [sys.executable, __file__, "--state", state, "--file", str(target)],
             check=True,
             timeout=60,
